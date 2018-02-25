@@ -62,7 +62,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="SearchDBContext.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,11 +69,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ConnectionToDB.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConnectionToDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="DataSearch.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -100,14 +94,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="ConnectionToDB.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>ConnectionToDB.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ConnectionToDB.dbml.layout">
-      <DependentUpon>ConnectionToDB.dbml</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
