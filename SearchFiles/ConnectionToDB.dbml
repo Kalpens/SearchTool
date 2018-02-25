@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CustomSearch" Class="ConnectionToDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-TS29HM4\SERVERSEARCH;Initial Catalog=CustomSearch;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True" SettingsObjectName="SearchFiles.Properties.Settings" SettingsPropertyName="CustomSearchConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Words_In_Documents" Member="Words_In_Documents">
+    <Type Name="Words_In_Document">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Word" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DocumentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
