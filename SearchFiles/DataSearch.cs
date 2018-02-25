@@ -50,7 +50,16 @@ namespace SearchFiles
                 // Create the connectionString
                 // Trusted_Connection is used to denote the connection uses Windows Authentication
                 //conn.ConnectionString = @"Server=[DESKTOP-TS29HM4\SERVERSEARCH];Database=[CustomSearch];Trusted_Connection=true";
-                conn.ConnectionString = @"Server=(DESKTOP-TS29HM4\SERVERSEARCH);Database=CustomSearch;Trusted_Connection=Yes;";
+                //conn.ConnectionString = @"Server=(DESKTOP-TS29HM4\SERVERSEARCH);Database=CustomSearch;Trusted_Connection=Yes;";
+                //conn.ConnectionString =
+                //    @"Data Source=DESKTOP-TS29HM4\SERVERSEARCH;" +
+                //    "Initial Catalog=CustomSearch;" +
+                //    "User id=userx;" +
+                //    "Password=userx;";
+                conn.ConnectionString =
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
+                    "Initial Catalog = CustomSearch;" +
+                    "Integrated Security=SSPI;";
                 conn.Open();
                 // Create the command
                 SqlCommand command = new SqlCommand("SELECT * FROM Words_In_Documents WHERE ID = @0", conn);
