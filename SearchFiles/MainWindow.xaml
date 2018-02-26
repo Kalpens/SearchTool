@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="378,32,0,0" VerticalAlignment="Top" Width="130" Height="28" Click="BtnSearch_Click"/>
+        <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="378,19,0,0" VerticalAlignment="Top" Width="130" Height="28" Click="BtnSearch_Click"/>
         <TextBox x:Name="SearchInput" HorizontalAlignment="Left" Height="42" Margin="106,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
         <ScrollViewer x:Name="ScrlViewDisplayResults" HorizontalAlignment="Left" Height="173" Margin="74,103,0,0" VerticalAlignment="Top" Width="380"/>
         <CheckBox x:Name="chbxIsAsync" Content="Async" HorizontalAlignment="Left" Margin="21,38,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCrawl" Content="Crawl" HorizontalAlignment="Left" Height="28" Margin="378,52,0,0" VerticalAlignment="Top" Width="130" Click="btnCrawl_Click"/>
 
     </Grid>
 </Window>

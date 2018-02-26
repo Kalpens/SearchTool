@@ -31,8 +31,9 @@ namespace SearchFiles
             var stackLayout = new StackPanel();
             stackLayout.Orientation = Orientation.Vertical;
             var dataSearch = new DataSearch();
+            var crawler = new Crawler();
             List<Word> list;
-            if (chbxIsAsync.IsChecked.Value)
+            if (chbxIsAsync.IsChecked != null && chbxIsAsync.IsChecked.Value)
             {
                 list = await dataSearch.GetListOfInts();
             }
@@ -45,6 +46,12 @@ namespace SearchFiles
                 stackLayout.Children.Add(new TextBlock() { Text = item.Value });
             }
             ScrlViewDisplayResults.Content = stackLayout;
+        }
+
+        private void btnCrawl_Click(object sender, RoutedEventArgs e)
+        {
+            var dataSearch = new DataSearch();
+            dataSearch.AddCrawledToDb();
         }
     }
 }

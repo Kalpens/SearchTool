@@ -14,12 +14,11 @@ namespace SearchFiles
         {
             List<Word> list = null;
             await Task.Delay(TimeSpan.FromSeconds(5));
-            await Task.Run(() => {
-                list = ReadDataFromSQL();
-            }
+            await Task.Run(() => { list = ReadDataFromSQL(); }
             );
             return list;
         }
+
         public List<Word> GetListOfIntsSync()
         {
             Thread.Sleep(TimeSpan.FromSeconds(5));
@@ -43,18 +42,47 @@ namespace SearchFiles
                 //Opening connection
                 conn.Open();
                 // Create the command
-                SqlCommand command = new SqlCommand("SELECT * FROM Words_In_Documents", conn);
-                
+                SqlCommand command = new SqlCommand("SELECT * FROM Words", conn);
+
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        var word = new Word() { id = (int)reader[0], Value = (string)reader[1] };
+                        var word = new Word() {id = (int) reader[0], Value = (string) reader[1]};
                         list.Add(word);
                     }
                 }
             }
+
             return list;
+        }
+
+        public void AddCrawledToDb()
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                // Create the connectionString
+                conn.ConnectionString =
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
+                    "Initial Catalog = CustomSearch;" +
+                    "Integrated Security=SSPI;";
+                //Opening connection
+                conn.Open();
+                Crawler crawler = new Crawler();
+                string[] words = crawler.ReadSingleFile();
+
+                foreach (var word in words)
+                {
+                    SqlCommand insertCommand =
+                        new SqlCommand(
+                            "INSERT INTO Words (Value, DocumentId) VALUES (@0, @1)",
+                            conn);
+
+                    insertCommand.Parameters.Add(new SqlParameter("0", word));
+                    insertCommand.Parameters.Add(new SqlParameter("1", 11));
+                    insertCommand.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
