@@ -10,25 +10,21 @@ namespace SearchFiles
 {
     class DataSearch
     {
-        public async Task<List<Word>> GetListOfInts()
+        DepartmentServiceGateway depGateway = new DepartmentServiceGateway();
+        public async Task<List<Word>> GetWordsAsync()
         {
             List<Word> list = null;
             await Task.Delay(TimeSpan.FromSeconds(5));
-            await Task.Run(() => { list = ReadDataFromSQL(); }
+            await Task.Run(() => { list = depGateway.GetAllDepartments(); }
             );
             return list;
         }
 
-        public List<Word> GetListOfIntsSync()
+        public List<Word> GetWordsSync()
         {
             Thread.Sleep(TimeSpan.FromSeconds(5));
-            List<Word> list = ReadDataFromSQL();
+            List<Word> list = depGateway.GetAllDepartments();
             return list;
-        }
-
-        public List<Word> ReadDataFromSQL()
-        {
-            return null;
         }
 
         public void AddCrawledToDb()

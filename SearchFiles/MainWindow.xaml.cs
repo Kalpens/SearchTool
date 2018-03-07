@@ -31,15 +31,14 @@ namespace SearchFiles
             var stackLayout = new StackPanel();
             stackLayout.Orientation = Orientation.Vertical;
             var dataSearch = new DataSearch();
-            var crawler = new Crawler();
             List<Word> list;
             if (chbxIsAsync.IsChecked != null && chbxIsAsync.IsChecked.Value)
             {
-                list = await dataSearch.GetListOfInts();
+                list = await dataSearch.GetWordsAsync();
             }
             else
             {
-                list = dataSearch.GetListOfIntsSync();
+                list = dataSearch.GetWordsSync();
             }
             foreach (var item in list)
             {
