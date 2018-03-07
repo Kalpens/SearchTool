@@ -28,33 +28,7 @@ namespace SearchFiles
 
         public List<Word> ReadDataFromSQL()
         {
-            List<Word> list = new List<Word>();
-            // Create the connection to the resource!
-            // This is the connection, that is established and
-            // will be available throughout this block.
-            using (SqlConnection conn = new SqlConnection())
-            {
-                // Create the connectionString
-                conn.ConnectionString =
-                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
-                    "Initial Catalog = CustomSearch;" +
-                    "Integrated Security=SSPI;";
-                //Opening connection
-                conn.Open();
-                // Create the command
-                SqlCommand command = new SqlCommand("SELECT * FROM Words", conn);
-
-                using (SqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var word = new Word() {id = (int) reader[0], Value = (string) reader[1]};
-                        list.Add(word);
-                    }
-                }
-            }
-
-            return list;
+            return null;
         }
 
         public void AddCrawledToDb()
@@ -63,7 +37,7 @@ namespace SearchFiles
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
+                    @"Data Source = DESKTOP-S63EU1H;" +
                     "Initial Catalog = CustomSearch;" +
                     "Integrated Security=SSPI;";
                 //Opening connection
