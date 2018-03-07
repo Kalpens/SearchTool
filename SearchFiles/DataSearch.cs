@@ -15,7 +15,7 @@ namespace SearchFiles
         {
             List<Word> list = null;
             await Task.Delay(TimeSpan.FromSeconds(5));
-            await Task.Run(() => { list = depGateway.GetAllDepartments(); }
+            await Task.Run(() => { list = depGateway.GetAllWords(); }
             );
             return list;
         }
@@ -23,7 +23,7 @@ namespace SearchFiles
         public List<Word> GetWordsSync()
         {
             Thread.Sleep(TimeSpan.FromSeconds(5));
-            List<Word> list = depGateway.GetAllDepartments();
+            List<Word> list = depGateway.GetAllWords();
             return list;
         }
 

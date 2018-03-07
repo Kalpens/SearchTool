@@ -79,7 +79,7 @@
     </Compile>
     <Compile Include="Crawler.cs" />
     <Compile Include="DataSearch.cs" />
-    <Compile Include="DepartmentServiceGateway.cs" />
+    <Compile Include="ServiceGateways\DepartmentServiceGateway.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
