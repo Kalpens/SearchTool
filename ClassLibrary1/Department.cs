@@ -9,7 +9,7 @@ namespace ClassLibrary1
         public string DName;
         public int DNumber;
         public int employeeCount;
-        //public int MgrSSN;
+        public int MgrSSN;
         //public DateTime MgrStartDate;
 
         public Department(string dname, int dnumber, int employeecount)//int mgrssn, DateTime mgrstartdate)
@@ -17,7 +17,7 @@ namespace ClassLibrary1
             DName = dname;
             DNumber = dnumber;
             employeeCount = employeecount;
-            //MgrSSN = mgrssn;
+            MgrSSN = -1;
             //MgrStartDate = mgrstartdate;
         }
     }

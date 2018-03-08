@@ -68,26 +68,26 @@ namespace SearchFiles
                 //A new Department with name of newDepartment should be provided at method call.
                 //var response = client.PutAsJsonAsync("api/department", newDepartment).Result;
 
-                //if (response.EnsureSuccessStatusCode())
+                //if (response.IsSuccessStatusCode)
                 //{
-                    return true;
+                return true;
                 //}
                 return false;
             }
         }
 
-        public bool CreateDepartment()
+        public bool CreateDepartment(Department newDepartment)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
                 //A new Department with name of newDepartment should be provided at method call.
-                //var response = client.PostAsJsonAsync("api/department", newDepartment).Result;
+                var response = client.PostAsJsonAsync("api/department", newDepartment).Result;
 
-                //if (response.EnsureSuccessStatusCode())
-                //{
+                if (response.IsSuccessStatusCode)
+                {
                 return true;
-                //}
+                }
                 return false;
             }
         }
@@ -100,7 +100,7 @@ namespace SearchFiles
                 //A new Department with name of newDepartment should be provided at method call.
                 var response = client.DeleteAsync($"api/department/{id}").Result;
 
-                //if (response.EnsureSuccessStatusCode())
+                //if (response.IsSuccessStatusCode())
                 //{
                 return true;
                 //}

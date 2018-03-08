@@ -28,6 +28,11 @@ namespace SearchFiles
 
         private async void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
+            /*DepartmentServiceGateway depService = new DepartmentServiceGateway();
+            Department dep = new Department("AppTest", -1, -1);
+            dep.MgrSSN = 987987987;
+            depService.CreateDepartment(dep);*/
+
             var stackLayout = new StackPanel();
             stackLayout.Orientation = Orientation.Vertical;
             var dataSearch = new DataSearch();
