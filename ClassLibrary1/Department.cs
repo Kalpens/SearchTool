@@ -22,7 +22,7 @@ namespace ClassLibrary1
         }
         public override string ToString()
         {
-            return "Department: " + DName + "   Department number: " + DNumber + "   Emplyee count: " + employeeCount + "   Manager SSN: " + MgrSSN;
+            return DName  + DNumber + employeeCount;
         }
     }
 }
