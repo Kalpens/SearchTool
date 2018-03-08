@@ -1,38 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web.Http;
 using ClassLibrary1;
 
-namespace SearchFiles
+namespace LoadBalancer.Controllers
 {
-    public class DepartmentServiceGateway
+    public class LoadBalanceController : ApiController
     {
-        
-        public List<Word> GetAllWords()
+        public int temp = 0;
+
+        // GET: api/LoadBalance
+        public List<Department> Get()
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
-                var response = client.GetAsync("/api/search").Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    return response.Content.ReadAsAsync<List<Word>>().Result;
-                }
-
-                return new List<Word>();
-            }
-        }
-
-        public List<Department> GetAllDepartments()
-        {
-            using (var client = new HttpClient())
-            {
-                PrepareHeader(client);
-                var response = client.GetAsync("api/LoadBalance").Result;
+                var response = client.GetAsync("/api/department").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     return response.Content.ReadAsAsync<List<Department>>().Result;
@@ -44,14 +31,14 @@ namespace SearchFiles
                 }
             }
         }
-        //TODO
-        //Return type needs to be changed to department
-        public List<Department> GetDepartment(int departmentNumber)
+
+        // GET: api/LoadBalance/5
+        public List<Department> Get(int id)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
-                var response = client.GetAsync("api/LoadBalance/" + departmentNumber).Result;
+                var response = client.GetAsync("/api/department/" + id).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     return response.Content.ReadAsAsync<List<Department>>().Result;
@@ -63,60 +50,79 @@ namespace SearchFiles
             }
         }
 
-        public bool UpdateDepartment(Department updateDepartment)
+        // POST: api/LoadBalance
+        public HttpResponseMessage Post(Department dep)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
                 //A new Department with name of newDepartment should be provided at method call.
-                var response = client.PutAsJsonAsync("api/LoadBalance", updateDepartment).Result;
+                var response = client.PostAsJsonAsync("api/department", dep).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return true;
+                    return response;
                 }
-                return false;
+
+                return response;
             }
         }
 
-        public bool CreateDepartment(Department newDepartment)
+        // PUT: api/LoadBalance/5
+        public HttpResponseMessage Put(Department dep)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
                 //A new Department with name of newDepartment should be provided at method call.
-                var response = client.PostAsJsonAsync("api/LoadBalance", newDepartment).Result;
+                var response = client.PutAsJsonAsync("api/department", dep).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                return true;
+                    return response;
                 }
-                return false;
+                return response;
             }
-        }
+            }
 
-        public bool DeleteDepartment(int id)
+        // DELETE: api/LoadBalance/5
+        public HttpResponseMessage Delete(int id)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
                 //A new Department with name of newDepartment should be provided at method call.
-                var response = client.DeleteAsync($"api/LoadBalance/{id}").Result;
+                var response = client.DeleteAsync($"api/department/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                return true;
+                    return response;
                 }
-                return false;
+                return response;
             }
         }
-
         private void PrepareHeader(HttpClient client)
         {
-            client.BaseAddress = new Uri("http://localhost:58458/");
+
+            List<string> lst = CollectAddress();
+
+            if (temp >= lst.Count)
+            {
+                temp = 0;
+            }
+
+            client.BaseAddress = new Uri(lst.ElementAt(temp));
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+            temp++;
+        }
+
+        private List<string> CollectAddress()
+        {
+            List<string> lst = new List<string>();
+            lst.Add("http://localhost:58458/");
+            return lst;
         }
 
     }
