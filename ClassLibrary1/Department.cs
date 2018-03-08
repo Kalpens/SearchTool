@@ -20,5 +20,9 @@ namespace ClassLibrary1
             MgrSSN = -1;
             //MgrStartDate = mgrstartdate;
         }
+        public override string ToString()
+        {
+            return "Department: " + DName + "   Department number: " + DNumber + "   Emplyee count: " + employeeCount + "   Manager SSN: " + MgrSSN;
+        }
     }
 }
