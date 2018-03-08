@@ -1,0 +1,27 @@
+﻿<Window x:Name="main" x:Class="CRUD_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUD_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="470">
+    <Grid>
+        <ListView x:Name="Mainlst" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="318" Initialized="ListView_Initialized">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name"/>
+                    <GridViewColumn Header="Number"/>
+                    <GridViewColumn Header="EmpCount"/>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="createBtn" Content="Create" HorizontalAlignment="Left" Margin="353,32,0,0" VerticalAlignment="Top" Width="75" Click="createBtn_Click"/>
+        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="353,75,0,0" VerticalAlignment="Top" Width="75" Click="deleteBtn_Click"/>
+        <Button x:Name="updateBtn" Content="Update" HorizontalAlignment="Left" Margin="353,121,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
+        <TextBox x:Name="SearchTxtbox" HorizontalAlignment="Left" Height="24" Margin="333,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="getBtn" Content="X" HorizontalAlignment="Left" Margin="426,168,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-0.687,0.484" Height="18" Click="getBtn_Click"/>
+
+    </Grid>
+</Window>
