@@ -105,10 +105,10 @@ namespace RestAPI.Controllers
             }
         }
 
-        // PUT: api/Department/5
-        public void Put(int id, [FromBody]string value)
+        // PUT: api/Department/
+        public void Put(Department dep)
         {
-            /*// Create the connection to the resource!
+            // Create the connection to the resource!
             // This is the connection, that is established and
             // will be available throughout this block.
             using (SqlConnection conn = new SqlConnection())
@@ -122,15 +122,34 @@ namespace RestAPI.Controllers
                 conn.Open();
 
                 // Create the command
-                SqlCommand command = new SqlCommand("usp_CreateDepartment", conn) { CommandType = CommandType.StoredProcedure };
+                SqlCommand command = new SqlCommand("usp_UpdateDepartmentName", conn) { CommandType = CommandType.StoredProcedure };
+                command.Parameters.Add("@DNumber", SqlDbType.Int).Value = dep.DNumber;
                 command.Parameters.Add("@DName", SqlDbType.VarChar).Value = dep.DName;
-                command.Parameters.Add("@@MgrSSN", SqlDbType.Decimal).Value = dep.MgrSSN;
-            }*/
+                command.ExecuteNonQuery();
+            }
         }
 
         // DELETE: api/Department/5
         public void Delete(int id)
         {
+            // Create the connection to the resource!
+            // This is the connection, that is established and
+            // will be available throughout this block.
+            using (SqlConnection conn = new SqlConnection())
+            {
+                // Create the connectionString
+                conn.ConnectionString =
+                    @"Data Source = DESKTOP-S63EU1H;" +
+                    "Initial Catalog = Company;" +
+                    "Integrated Security=SSPI;";
+                //Opening connection
+                conn.Open();
+
+                // Create the command
+                SqlCommand command = new SqlCommand("usp_DeleteDepartment", conn) { CommandType = CommandType.StoredProcedure };
+                command.Parameters.Add("@DNumber", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

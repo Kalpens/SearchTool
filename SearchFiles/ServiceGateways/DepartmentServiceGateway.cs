@@ -60,18 +60,18 @@ namespace SearchFiles
             }
         }
 
-        public bool UpdateDepartment()
+        public bool UpdateDepartment(Department updateDepartment)
         {
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
                 //A new Department with name of newDepartment should be provided at method call.
-                //var response = client.PutAsJsonAsync("api/department", newDepartment).Result;
+                var response = client.PutAsJsonAsync("api/department", updateDepartment).Result;
 
-                //if (response.IsSuccessStatusCode)
-                //{
-                return true;
-                //}
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
                 return false;
             }
         }

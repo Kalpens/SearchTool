@@ -28,28 +28,28 @@ namespace SearchFiles
 
         private async void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            /*DepartmentServiceGateway depService = new DepartmentServiceGateway();
-            Department dep = new Department("AppTest", -1, -1);
-            dep.MgrSSN = 987987987;
-            depService.CreateDepartment(dep);*/
+            DepartmentServiceGateway depService = new DepartmentServiceGateway();
+            Department dep = new Department("AppTestUpdate", 12, -1);
+            //dep.MgrSSN = 987987987;
+            depService.UpdateDepartment(dep);
 
-            var stackLayout = new StackPanel();
-            stackLayout.Orientation = Orientation.Vertical;
-            var dataSearch = new DataSearch();
-            List<Word> list;
-            if (chbxIsAsync.IsChecked != null && chbxIsAsync.IsChecked.Value)
-            {
-                list = await dataSearch.GetWordsAsync();
-            }
-            else
-            {
-                list = dataSearch.GetWordsSync();
-            }
-            foreach (var item in list)
-            {
-                stackLayout.Children.Add(new TextBlock() { Text = item.Value });
-            }
-            ScrlViewDisplayResults.Content = stackLayout;
+            //var stackLayout = new StackPanel();
+            //stackLayout.Orientation = Orientation.Vertical;
+            //var dataSearch = new DataSearch();
+            //List<Word> list;
+            //if (chbxIsAsync.IsChecked != null && chbxIsAsync.IsChecked.Value)
+            //{
+            //    list = await dataSearch.GetWordsAsync();
+            //}
+            //else
+            //{
+            //    list = dataSearch.GetWordsSync();
+            //}
+            //foreach (var item in list)
+            //{
+            //    stackLayout.Children.Add(new TextBlock() { Text = item.Value });
+            //}
+            //ScrlViewDisplayResults.Content = stackLayout;
         }
 
         private void btnCrawl_Click(object sender, RoutedEventArgs e)
