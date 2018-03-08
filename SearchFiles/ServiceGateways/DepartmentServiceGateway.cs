@@ -27,7 +27,7 @@ namespace SearchFiles
             }
         }
 
-        public void GetAllDepartments()
+        public List<Department> GetAllDepartments()
         {
             using (var client = new HttpClient())
             {
@@ -35,16 +35,18 @@ namespace SearchFiles
                 var response = client.GetAsync("/api/department").Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    //return response.Content.ReadAsAsync<List<Department>>().Result;
+                    return response.Content.ReadAsAsync<List<Department>>().Result;
                 }
-
-                //return new List<Department>();
-                throw new NotImplementedException();
+                else
+                {
+                    //return new List<Department>();
+                    throw new Exception("Cannot reach database.");
+                }
             }
         }
         //TODO
         //Return type needs to be changed to department
-        public void GetDepartment(int departmentNumber)
+        public Department GetDepartment(int departmentNumber)
         {
             using (var client = new HttpClient())
             {
@@ -52,11 +54,12 @@ namespace SearchFiles
                 var response = client.GetAsync("/api/department/"+departmentNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    //return response.Content.ReadAsAsync<Department>().Result;
+                    return response.Content.ReadAsAsync<Department>().Result;
                 }
-
-                //return new Department();
-                throw new NotImplementedException();
+                else
+                {
+                    throw new Exception("Cannot reach database or Department not found.");
+                }
             }
         }
 
@@ -100,10 +103,10 @@ namespace SearchFiles
                 //A new Department with name of newDepartment should be provided at method call.
                 var response = client.DeleteAsync($"api/department/{id}").Result;
 
-                //if (response.IsSuccessStatusCode())
-                //{
+                if (response.IsSuccessStatusCode)
+                {
                 return true;
-                //}
+                }
                 return false;
             }
         }
