@@ -5,23 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUD_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="470">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <ListView x:Name="Mainlst" HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="318" Initialized="ListView_Initialized">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name"/>
-                    <GridViewColumn Header="Number"/>
-                    <GridViewColumn Header="EmpCount"/>
-                    <GridViewColumn/>
+                    <GridViewColumn Header=""/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="createBtn" Content="Create" HorizontalAlignment="Left" Margin="353,32,0,0" VerticalAlignment="Top" Width="75" Click="createBtn_Click"/>
-        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="353,75,0,0" VerticalAlignment="Top" Width="75" Click="deleteBtn_Click"/>
-        <Button x:Name="updateBtn" Content="Update" HorizontalAlignment="Left" Margin="353,121,0,0" VerticalAlignment="Top" Width="75" Click="updateBtn_Click"/>
-        <TextBox x:Name="SearchTxtbox" HorizontalAlignment="Left" Height="24" Margin="333,165,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="getBtn" Content="X" HorizontalAlignment="Left" Margin="426,168,0,0" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-0.687,0.484" Height="18" Click="getBtn_Click"/>
+        <Button x:Name="createBtn" Content="Create" HorizontalAlignment="Left" Margin="682,50,0,0" VerticalAlignment="Top" Width="100" Click="createBtn_Click"/>
+        <Button x:Name="deleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="353,86,0,0" VerticalAlignment="Top" Width="100" Click="deleteBtn_Click"/>
+        <Button x:Name="updateBtn" Content="Update" HorizontalAlignment="Left" Margin="515,50,0,0" VerticalAlignment="Top" Width="100" Click="updateBtn_Click"/>
+        <TextBox x:Name="SearchTxtbox" HorizontalAlignment="Left" Height="24" Margin="353,10,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="getBtn" Content="Get" HorizontalAlignment="Left" Margin="353,52,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.687,0.484" Height="18" Click="getBtn_Click"/>
+        <TextBox x:Name="NameTxtBox" HorizontalAlignment="Left" Height="24" Margin="515,10,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="MgrSSNTxtBox" HorizontalAlignment="Left" Height="24" Margin="682,10,0,0" TextWrapping="Wrap" Text="ManagerSSN" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

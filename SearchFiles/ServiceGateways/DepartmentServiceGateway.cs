@@ -46,7 +46,7 @@ namespace SearchFiles
         }
         //TODO
         //Return type needs to be changed to department
-        public Department GetDepartment(int departmentNumber)
+        public List<Department> GetDepartment(int departmentNumber)
         {
             using (var client = new HttpClient())
             {
@@ -54,7 +54,7 @@ namespace SearchFiles
                 var response = client.GetAsync("/api/department/"+departmentNumber).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<Department>().Result;
+                    return response.Content.ReadAsAsync<List<Department>>().Result;
                 }
                 else
                 {
