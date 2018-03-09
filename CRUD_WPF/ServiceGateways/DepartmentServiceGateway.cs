@@ -11,22 +11,6 @@ namespace SearchFiles
 {
     public class DepartmentServiceGateway
     {
-
-        public List<Word> GetAllWords()
-        {
-            using (var client = new HttpClient())
-            {
-                PrepareHeader(client);
-                var response = client.GetAsync("/api/search").Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    return response.Content.ReadAsAsync<List<Word>>().Result;
-                }
-
-                return new List<Word>();
-            }
-        }
-
         public List<Department> GetAllDepartments()
         {
             using (var client = new HttpClient())
@@ -39,13 +23,11 @@ namespace SearchFiles
                 }
                 else
                 {
-                    //return new List<Department>();
                     throw new Exception("Cannot reach database.");
                 }
             }
         }
-        //TODO
-        //Return type needs to be changed to department
+
         public List<Department> GetDepartment(int departmentNumber)
         {
             using (var client = new HttpClient())
@@ -68,7 +50,7 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
-                //A new Department with name of newDepartment should be provided at method call.
+
                 var response = client.PutAsJsonAsync("api/department", updateDepartment).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -84,7 +66,7 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
-                //A new Department with name of newDepartment should be provided at method call.
+
                 var response = client.PostAsJsonAsync("api/department", newDepartment).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -100,7 +82,7 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
-                //A new Department with name of newDepartment should be provided at method call.
+
                 var response = client.DeleteAsync($"api/department/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
