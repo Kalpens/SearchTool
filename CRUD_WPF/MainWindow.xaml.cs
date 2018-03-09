@@ -49,8 +49,22 @@ namespace CRUD_WPF
                 name = NameTxtBox.Text;
                 Department dep = new Department(name, -1, -1);
                 dep.MgrSSN = mgrssn;
-                DepartmentServiceGateway dg = new DepartmentServiceGateway();
-                dg.CreateDepartment(dep);
+                try
+                {
+                    DepartmentServiceGateway dg = new DepartmentServiceGateway();
+                    if (!dg.CreateDepartment(dep))
+                    {
+                        throw new Exception("ManagerSSN already assigned to a department.");
+                    }
+                    else
+                    {
+                        GetAll();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
             else
             {
