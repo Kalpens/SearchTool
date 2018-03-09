@@ -67,6 +67,7 @@ namespace CRUD_WPF
                 id = Convert.ToInt32(SearchTxtbox.Text);
                 DepartmentServiceGateway dg = new DepartmentServiceGateway();
                 dg.DeleteDepartment(id);
+                GetAll();
             }
             catch
             {
@@ -95,6 +96,7 @@ namespace CRUD_WPF
                 Department dep = new Department(name, id, -1);
                 DepartmentServiceGateway dg = new DepartmentServiceGateway();
                 dg.UpdateDepartment(dep);
+                GetAll();
             }
             else
             {
