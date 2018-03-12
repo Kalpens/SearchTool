@@ -23,13 +23,14 @@ namespace CRUD_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        GatewayFacade dg = new GatewayFacade();
         public MainWindow()
         {
             InitializeComponent();
         }
 
 
-        private void createBtn_Click(object sender, RoutedEventArgs e)
+        private async void createBtn_Click(object sender, RoutedEventArgs e)
         {
             int mgrssn;
             try
@@ -51,8 +52,8 @@ namespace CRUD_WPF
                 dep.MgrSSN = mgrssn;
                 try
                 {
-                    DepartmentServiceGateway dg = new DepartmentServiceGateway();
-                    if (!dg.CreateDepartment(dep))
+                    var succesfull = await dg.CreateDepartment(dep);
+                    if (!succesfull)
                     {
                         throw new Exception("ManagerSSN already assigned to a department.");
                     }
@@ -73,14 +74,13 @@ namespace CRUD_WPF
             }
         }
 
-        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        private async void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
             int id;
             try
             {
                 id = Convert.ToInt32(SearchTxtbox.Text);
-                DepartmentServiceGateway dg = new DepartmentServiceGateway();
-                dg.DeleteDepartment(id);
+                await dg.DeleteDepartment(id);
                 GetAll();
             }
             catch
@@ -89,7 +89,7 @@ namespace CRUD_WPF
             }            
         }
 
-        private void updateBtn_Click(object sender, RoutedEventArgs e)
+        private async void updateBtn_Click(object sender, RoutedEventArgs e)
         {
             int id;
             try
@@ -108,8 +108,7 @@ namespace CRUD_WPF
             {
                 name = NameTxtBox.Text;
                 Department dep = new Department(name, id, -1);
-                DepartmentServiceGateway dg = new DepartmentServiceGateway();
-                dg.UpdateDepartment(dep);
+                await dg.UpdateDepartment(dep);
                 GetAll();
             }
             else
@@ -119,14 +118,15 @@ namespace CRUD_WPF
             }
         }
 
-        private void getBtn_Click(object sender, RoutedEventArgs e)
+        private async void getBtn_Click(object sender, RoutedEventArgs e)
         {
             int id;
             try
             {
                 id = Convert.ToInt32(SearchTxtbox.Text);
-                DepartmentServiceGateway dg = new DepartmentServiceGateway();
-                List<Department> lst = dg.GetDepartment(id);
+                Department dep = await dg.GetDepartment(id);
+                List<Department> lst = new List<Department>();
+                lst.Add(dep);
                 setList(lst);
             }
             catch

@@ -33,7 +33,7 @@ namespace LoadBalancer.Controllers
         }
 
         // GET: api/LoadBalance/5
-        public List<Department> Get(int id)
+        public Department Get(int id)
         {
             using (var client = new HttpClient())
             {
@@ -41,7 +41,7 @@ namespace LoadBalancer.Controllers
                 var response = client.GetAsync("/api/department/" + id).Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    return response.Content.ReadAsAsync<List<Department>>().Result;
+                    return response.Content.ReadAsAsync<Department>().Result;
                 }
                 else
                 {
