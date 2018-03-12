@@ -25,7 +25,7 @@ namespace RestAPI.Controllers
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-S63EU1H;" +
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
                     "Initial Catalog = Company;" +
                     "Integrated Security=SSPI;";
                 //Opening connection
@@ -60,7 +60,7 @@ namespace RestAPI.Controllers
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-S63EU1H;" +
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
                     "Initial Catalog = Company;" +
                     "Integrated Security=SSPI;";
                 //Opening connection
@@ -92,7 +92,7 @@ namespace RestAPI.Controllers
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-S63EU1H;" +
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
                     "Initial Catalog = Company;" +
                     "Integrated Security=SSPI;";
                 //Opening connection
@@ -116,7 +116,7 @@ namespace RestAPI.Controllers
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-S63EU1H;" +
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
                     "Initial Catalog = Company;" +
                     "Integrated Security=SSPI;";
                 //Opening connection
@@ -140,7 +140,7 @@ namespace RestAPI.Controllers
             {
                 // Create the connectionString
                 conn.ConnectionString =
-                    @"Data Source = DESKTOP-S63EU1H;" +
+                    @"Data Source = DESKTOP-TS29HM4\SERVERSEARCH;" +
                     "Initial Catalog = Company;" +
                     "Integrated Security=SSPI;";
                 //Opening connection

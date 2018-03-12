@@ -96,7 +96,7 @@ namespace SearchFiles
 
         private void PrepareHeader(HttpClient client)
         {
-            client.BaseAddress = new Uri("http://localhost:58458/");
+            client.BaseAddress = new Uri("http://localhost:63756/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
