@@ -1,3 +1,0 @@
-[3/12/2018 8:31:30 PM] GetAllDepartments Method called
-[3/12/2018 8:31:34 PM] GetAllDepartments Method finished
----------------------

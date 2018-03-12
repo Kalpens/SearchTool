@@ -11,7 +11,7 @@ namespace LoadBalancer.Controllers
 {
     public class LoadBalanceController : ApiController
     {
-        public int temp = 0;
+        private static int temp = 0;
 
         // GET: api/LoadBalance
         public List<Department> Get()
