@@ -122,6 +122,7 @@ namespace LoadBalancer.Controllers
         {
             List<string> lst = new List<string>();
             lst.Add("http://localhost:58458/");
+            lst.Add("http://localhost:58015/");
             return lst;
         }
 
