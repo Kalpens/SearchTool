@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Xsl;
-using ClassLibrary1;
+using BE;
 using SearchFiles;
 
 namespace CRUD_WPF
