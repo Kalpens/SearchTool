@@ -11,22 +11,6 @@ namespace SearchFiles
 {
     public class DepartmentServiceGateway
     {
-        
-        public List<Word> GetAllWords()
-        {
-            using (var client = new HttpClient())
-            {
-                PrepareHeader(client);
-                var response = client.GetAsync("/api/search").Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    return response.Content.ReadAsAsync<List<Word>>().Result;
-                }
-
-                return new List<Word>();
-            }
-        }
-
         public List<Department> GetAllDepartments()
         {
             using (var client = new HttpClient())
@@ -112,7 +96,7 @@ namespace SearchFiles
 
         private void PrepareHeader(HttpClient client)
         {
-            client.BaseAddress = new Uri("http://localhost:58458/");
+            client.BaseAddress = new Uri("http://localhost:63756/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
