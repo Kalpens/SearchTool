@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace RestAPI.Controllers
@@ -48,9 +49,9 @@ namespace RestAPI.Controllers
         }
 
         // GET: api/Department/5
-        public Department Get(int id)
+        public List<Department> Get(int id)
         {
-            Department dep = null;
+            List<Department> dep = new List<Department>();
 
             // Create the connection to the resource!
             // This is the connection, that is established and
@@ -73,7 +74,7 @@ namespace RestAPI.Controllers
                 {
                     while (reader.Read())
                     {
-                        dep = new Department((string)reader["DName"], (int)reader["DNumber"], (int)reader["employeeCount"]); //(int)reader[0], Value = (string)reader[1] };
+                        dep.Add(new Department((string)reader["DName"], (int)reader["DNumber"], (int)reader["employeeCount"])); //(int)reader[0], Value = (string)reader[1] };
                     }
                 }
             }

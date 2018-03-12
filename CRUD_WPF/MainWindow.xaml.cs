@@ -31,33 +31,131 @@ namespace CRUD_WPF
 
         private void createBtn_Click(object sender, RoutedEventArgs e)
         {
+            int mgrssn;
+            try
+            {
+                mgrssn = Convert.ToInt32(MgrSSNTxtBox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a ManagerSSN!");
+                return;
+            }
 
+            string name;
+
+            if (NameTxtBox.Text != "")
+            {
+                name = NameTxtBox.Text;
+                Department dep = new Department(name, -1, -1);
+                dep.MgrSSN = mgrssn;
+                try
+                {
+                    DepartmentServiceGateway dg = new DepartmentServiceGateway();
+                    if (!dg.CreateDepartment(dep))
+                    {
+                        throw new Exception("ManagerSSN already assigned to a department.");
+                    }
+                    else
+                    {
+                        GetAll();
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a name!");
+                return;
+            }
         }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            int id;
+            try
+            {
+                id = Convert.ToInt32(SearchTxtbox.Text);
+                DepartmentServiceGateway dg = new DepartmentServiceGateway();
+                dg.DeleteDepartment(id);
+                GetAll();
+            }
+            catch
+            {
+                MessageBox.Show("Please enter an ID!");
+            }            
         }
 
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
+            int id;
+            try
+            {
+                id = Convert.ToInt32(SearchTxtbox.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter an ID!");
+                return;
+            }
 
+            string name;
+
+            if (NameTxtBox.Text != "")
+            {
+                name = NameTxtBox.Text;
+                Department dep = new Department(name, id, -1);
+                DepartmentServiceGateway dg = new DepartmentServiceGateway();
+                dg.UpdateDepartment(dep);
+                GetAll();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a name!");
+                return;
+            }
         }
 
         private void getBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            int id;
+            try
+            {
+                id = Convert.ToInt32(SearchTxtbox.Text);
+                DepartmentServiceGateway dg = new DepartmentServiceGateway();
+                List<Department> lst = dg.GetDepartment(id);
+                setList(lst);
+            }
+            catch
+            {
+                GetAll();
+            }
         }
 
 
         private void ListView_Initialized(object sender, EventArgs e)
         {
-            DepartmentServiceGateway dg = new DepartmentServiceGateway();
-            List<Department> lst = dg.GetAllDepartments();
+            GetAll();
+        }
+
+        private void setList(List<Department> lst)
+        {
+            Mainlst.Items.Clear();
+
             foreach (Department d in lst)
             {
                 Mainlst.Items.Add(d);
             }
+        }
+
+        private void GetAll()
+        {
+            DepartmentServiceGateway dg = new DepartmentServiceGateway();
+            List<Department> lst = dg.GetAllDepartments();
+            setList(lst);
         }
     }
 }

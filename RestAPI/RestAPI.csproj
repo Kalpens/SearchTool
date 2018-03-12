@@ -260,10 +260,6 @@
       <Project>{d5fe7d81-f732-471b-b922-151cf41e6bbc}</Project>
       <Name>ClassLibrary1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SearchFiles\SearchFiles.csproj">
-      <Project>{b20b8579-14d6-43aa-8bee-6abc85507f33}</Project>
-      <Name>SearchFiles</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

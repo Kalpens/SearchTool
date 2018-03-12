@@ -11,6 +11,7 @@ namespace SearchFiles
 {
     public class DepartmentServiceGateway
     {
+<<<<<<< HEAD:SearchFiles/ServiceGateways/DepartmentServiceGateway.cs
         
         public List<Word> GetAllWords()
         {
@@ -27,6 +28,8 @@ namespace SearchFiles
             }
         }
 
+=======
+>>>>>>> master:CRUD_WPF/ServiceGateways/DepartmentServiceGateway.cs
         public List<Department> GetAllDepartments()
         {
             using (var client = new HttpClient())
@@ -39,13 +42,16 @@ namespace SearchFiles
                 }
                 else
                 {
-                    //return new List<Department>();
                     throw new Exception("Cannot reach database.");
                 }
             }
         }
+<<<<<<< HEAD:SearchFiles/ServiceGateways/DepartmentServiceGateway.cs
         //TODO
         //Return type needs to be changed to department
+=======
+
+>>>>>>> master:CRUD_WPF/ServiceGateways/DepartmentServiceGateway.cs
         public List<Department> GetDepartment(int departmentNumber)
         {
             using (var client = new HttpClient())
@@ -68,8 +74,13 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
+<<<<<<< HEAD:SearchFiles/ServiceGateways/DepartmentServiceGateway.cs
                 //A new Department with name of newDepartment should be provided at method call.
                 var response = client.PutAsJsonAsync("api/LoadBalance", updateDepartment).Result;
+=======
+
+                var response = client.PutAsJsonAsync("api/department", updateDepartment).Result;
+>>>>>>> master:CRUD_WPF/ServiceGateways/DepartmentServiceGateway.cs
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -84,8 +95,13 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
+<<<<<<< HEAD:SearchFiles/ServiceGateways/DepartmentServiceGateway.cs
                 //A new Department with name of newDepartment should be provided at method call.
                 var response = client.PostAsJsonAsync("api/LoadBalance", newDepartment).Result;
+=======
+
+                var response = client.PostAsJsonAsync("api/department", newDepartment).Result;
+>>>>>>> master:CRUD_WPF/ServiceGateways/DepartmentServiceGateway.cs
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -100,8 +116,13 @@ namespace SearchFiles
             using (var client = new HttpClient())
             {
                 PrepareHeader(client);
+<<<<<<< HEAD:SearchFiles/ServiceGateways/DepartmentServiceGateway.cs
                 //A new Department with name of newDepartment should be provided at method call.
                 var response = client.DeleteAsync($"api/LoadBalance/{id}").Result;
+=======
+
+                var response = client.DeleteAsync($"api/department/{id}").Result;
+>>>>>>> master:CRUD_WPF/ServiceGateways/DepartmentServiceGateway.cs
 
                 if (response.IsSuccessStatusCode)
                 {

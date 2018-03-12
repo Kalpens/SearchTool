@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchFiles", "SearchFiles\SearchFiles.csproj", "{B20B8579-14D6-43AA-8BEE-6ABC85507F33}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{D5FE7D81-F732-471B-B922-151CF41E6BBC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPI", "RestAPI\RestAPI.csproj", "{32ABCDFC-6EA1-4993-B27A-502599055AB4}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B20B8579-14D6-43AA-8BEE-6ABC85507F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B20B8579-14D6-43AA-8BEE-6ABC85507F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B20B8579-14D6-43AA-8BEE-6ABC85507F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B20B8579-14D6-43AA-8BEE-6ABC85507F33}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5FE7D81-F732-471B-B922-151CF41E6BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5FE7D81-F732-471B-B922-151CF41E6BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5FE7D81-F732-471B-B922-151CF41E6BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU

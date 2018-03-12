@@ -22,7 +22,7 @@ namespace ClassLibrary1
         }
         public override string ToString()
         {
-            return DName  + DNumber + employeeCount;
+            return "DName: "+DName + " DNumber: " + DNumber + " EmployeeCount: " + employeeCount;
         }
     }
 }
