@@ -1,0 +1,72 @@
+[3/13/2018 11:45:26 AM] GetDepartment Method called
+[3/13/2018 11:45:29 AM] GetDepartment Method finished
+---------------------
+[3/13/2018 11:45:28 AM] GetDepartment Method called
+[3/13/2018 11:45:31 AM] GetDepartment Method finished
+---------------------
+[3/13/2018 11:46:34 AM] GetDepartment Method called
+[3/13/2018 11:46:37 AM] GetDepartment Method finished
+---------------------
+[3/13/2018 12:13:45 PM] GetAllDepartments Method called
+[3/13/2018 12:13:48 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:13:51 PM] GetAllDepartments Method called
+[3/13/2018 12:13:54 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:13:58 PM] GetAllDepartments Method called
+[3/13/2018 12:14:01 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:15:45 PM] DeleteDepartment Method called
+[3/13/2018 12:15:49 PM] DeleteDepartment Method finished
+---------------------
+[3/13/2018 12:16:12 PM] UpdateDepartment Method called
+[3/13/2018 12:16:12 PM] UpdateDepartment Method finished
+---------------------
+[3/13/2018 12:16:12 PM] GetAllDepartments Method called
+[3/13/2018 12:16:15 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:16:49 PM] UpdateDepartment Method called
+[3/13/2018 12:16:49 PM] UpdateDepartment Method finished
+---------------------
+[3/13/2018 12:16:57 PM] GetDepartment Method called
+[3/13/2018 12:17:00 PM] GetDepartment Method finished
+---------------------
+[3/13/2018 12:16:58 PM] GetDepartment Method called
+[3/13/2018 12:17:01 PM] GetDepartment Method finished
+---------------------
+[3/13/2018 12:17:03 PM] GetAllDepartments Method called
+[3/13/2018 12:17:06 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:03 PM] GetAllDepartments Method called
+[3/13/2018 12:17:06 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:04 PM] GetAllDepartments Method called
+[3/13/2018 12:17:07 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:08 PM] GetDepartment Method called
+[3/13/2018 12:17:11 PM] GetDepartment Method finished
+---------------------
+[3/13/2018 12:17:11 PM] GetAllDepartments Method called
+[3/13/2018 12:17:15 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:21 PM] GetAllDepartments Method called
+[3/13/2018 12:17:24 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:27 PM] GetAllDepartments Method called
+[3/13/2018 12:17:30 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:45 PM] GetDepartment Method called
+[3/13/2018 12:17:48 PM] GetDepartment Method finished
+---------------------
+[3/13/2018 12:17:48 PM] GetAllDepartments Method called
+[3/13/2018 12:17:51 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:48 PM] GetAllDepartments Method called
+[3/13/2018 12:17:51 PM] GetAllDepartments Method finished
+---------------------
+[3/13/2018 12:17:51 PM] DeleteDepartment Method called
+[3/13/2018 12:17:54 PM] DeleteDepartment Method finished
+---------------------
+[3/13/2018 12:17:55 PM] DeleteDepartment Method called
+[3/13/2018 12:17:58 PM] DeleteDepartment Method finished
+---------------------

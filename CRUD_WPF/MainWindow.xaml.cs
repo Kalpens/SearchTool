@@ -151,10 +151,9 @@ namespace CRUD_WPF
             }
         }
 
-        private void GetAll()
+        private async void GetAll()
         {
-            DepartmentServiceGateway dg = new DepartmentServiceGateway();
-            List<Department> lst = dg.GetAllDepartments();
+            List<Department> lst = await dg.GetAllDepartments();
             setList(lst);
         }
     }
