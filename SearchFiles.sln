@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadBalancer", "LoadBalance
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi2", "RestApi2\RestApi2.csproj", "{4D4E45FF-655E-4824-A492-BD1DD654B264}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeSorter", "EmployeeSorter\EmployeeSorter.csproj", "{20F0B086-84A3-458C-8EFF-3E6A5B8A878B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmplyeeUnitTest", "EmplyeeUnitTest\EmplyeeUnitTest.csproj", "{7ABA37CD-1257-4432-BCB7-0D73E183584D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{4D4E45FF-655E-4824-A492-BD1DD654B264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D4E45FF-655E-4824-A492-BD1DD654B264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D4E45FF-655E-4824-A492-BD1DD654B264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F0B086-84A3-458C-8EFF-3E6A5B8A878B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F0B086-84A3-458C-8EFF-3E6A5B8A878B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F0B086-84A3-458C-8EFF-3E6A5B8A878B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F0B086-84A3-458C-8EFF-3E6A5B8A878B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABA37CD-1257-4432-BCB7-0D73E183584D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABA37CD-1257-4432-BCB7-0D73E183584D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABA37CD-1257-4432-BCB7-0D73E183584D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABA37CD-1257-4432-BCB7-0D73E183584D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
